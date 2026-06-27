@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">AI Chat Assisstant</string>
+    <string name="chat_title">Gemini Chat</string>
+    <string name="message_hint">Type a message…</string>
+    <string name="send">Send</string>
+    <string name="typing">Thinking…</string>
+    <string name="retry">Retry</string>
+    <string name="clear_chat">Clear chat</string>
+    <string name="clear_chat_title">Clear conversation?</string>
+    <string name="clear_chat_message">This will permanently delete all messages.</string>
+    <string name="clear">Clear</string>
+    <string name="cancel">Cancel</string>
+</resources>

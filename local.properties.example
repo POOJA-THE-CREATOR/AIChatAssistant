@@ -1,0 +1,5 @@
+## Copy this file to `local.properties` and fill in your values.
+## `local.properties` is git-ignored and must not be committed.
+
+sdk.dir=/path/to/your/Android/sdk
+GEMINI_API_KEY=your_actual_api_key_here

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_500">#FF6750A4</color>
+    <color name="purple_700">#FF4F378B</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="black">#FF000000</color>
+
+    <color name="chat_background">#FFF5F5F5</color>
+    <color name="toolbar_background">#FF6750A4</color>
+    <color name="text_primary">#FF1C1B1F</color>
+    <color name="text_hint">#FF79747E</color>
+
+    <color name="user_message_background">#FF6750A4</color>
+    <color name="user_message_text">#FFFFFFFF</color>
+    <color name="bot_message_background">#FFFFFFFF</color>
+    <color name="bot_message_text">#FF1C1B1F</color>
+</resources>
