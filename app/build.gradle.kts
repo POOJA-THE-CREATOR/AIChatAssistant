@@ -13,6 +13,11 @@ val localProperties = Properties().apply {
     }
 }
 
+val geminiApiKey: String = localProperties.getProperty("GEMINI_API_KEY", "")
+    .trim()
+    .replace("\\", "\\\\")
+    .replace("\"", "\\\"")
+
 android {
     namespace = "com.example.aichatassisstant"
     compileSdk = 36
@@ -29,7 +34,7 @@ android {
         buildConfigField(
             "String",
             "GEMINI_API_KEY",
-            "\"${localProperties.getProperty("GEMINI_API_KEY", "")}\""
+            "\"$geminiApiKey\""
         )
         buildConfigField(
             "String",

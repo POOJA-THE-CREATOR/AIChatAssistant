@@ -10,4 +10,11 @@
     <string name="clear_chat_message">This will permanently delete all messages.</string>
     <string name="clear">Clear</string>
     <string name="cancel">Cancel</string>
+    <string name="set_api_key">Set API Key</string>
+    <string name="api_key_dialog_title">Gemini API Key</string>
+    <string name="api_key_dialog_message">Paste your free API key from Google AI Studio.\n\nNo rebuild needed — saved on this device only.</string>
+    <string name="api_key_hint">AIza…</string>
+    <string name="save">Save</string>
+    <string name="get_api_key">Get free key</string>
+    <string name="demo_mode_banner">Demo mode — mock replies. Tap lock icon to add a Gemini key for real AI.</string>
 </resources>

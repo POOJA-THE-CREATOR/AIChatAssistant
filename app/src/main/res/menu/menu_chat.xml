@@ -3,6 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
+        android:id="@+id/action_api_key"
+        android:icon="@drawable/ic_api_key"
+        android:title="@string/set_api_key"
+        app:showAsAction="ifRoom" />
+
+    <item
         android:id="@+id/action_clear_chat"
         android:icon="@drawable/ic_delete"
         android:title="@string/clear_chat"

@@ -14,4 +14,6 @@
     <color name="user_message_text">#FFFFFFFF</color>
     <color name="bot_message_background">#FFFFFFFF</color>
     <color name="bot_message_text">#FF1C1B1F</color>
+    <color name="demo_banner_background">#FFE8DEF8</color>
+    <color name="demo_banner_text">#FF4F378B</color>
 </resources>

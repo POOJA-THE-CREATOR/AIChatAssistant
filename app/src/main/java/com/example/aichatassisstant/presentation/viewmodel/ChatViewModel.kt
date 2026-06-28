@@ -2,6 +2,7 @@ package com.example.aichatassisstant.presentation.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.aichatassisstant.data.local.ApiKeyManager
 import com.example.aichatassisstant.domain.usecase.ClearChatUseCase
 import com.example.aichatassisstant.domain.usecase.ObserveMessagesUseCase
 import com.example.aichatassisstant.domain.usecase.RetryLastResponseUseCase
@@ -19,7 +20,8 @@ class ChatViewModel @Inject constructor(
     private val observeMessagesUseCase: ObserveMessagesUseCase,
     private val sendMessageUseCase: SendMessageUseCase,
     private val retryLastResponseUseCase: RetryLastResponseUseCase,
-    private val clearChatUseCase: ClearChatUseCase
+    private val clearChatUseCase: ClearChatUseCase,
+    private val apiKeyManager: ApiKeyManager
 ) : ViewModel() {
 
     private val _uiState = MutableStateFlow(ChatUiState())
@@ -27,6 +29,7 @@ class ChatViewModel @Inject constructor(
 
     init {
         observeMessages()
+        refreshModeState()
     }
 
     fun sendMessage(content: String) {
@@ -63,6 +66,30 @@ class ChatViewModel @Inject constructor(
         }
     }
 
+    fun saveApiKey(key: String) {
+        val trimmed = key.trim()
+        if (trimmed.isEmpty()) {
+            setError("API key cannot be empty")
+            return
+        }
+
+        apiKeyManager.saveApiKey(trimmed)
+        refreshModeState()
+        setShowApiKeyDialog(false)
+
+        viewModelScope.launch {
+            retryLastResponse()
+        }
+    }
+
+    fun showApiKeyDialog() {
+        setShowApiKeyDialog(true)
+    }
+
+    fun dismissApiKeyDialog() {
+        setShowApiKeyDialog(false)
+    }
+
     fun clearChat() {
         if (_uiState.value.isLoading) return
 
@@ -84,6 +111,12 @@ class ChatViewModel @Inject constructor(
         }
     }
 
+    private fun refreshModeState() {
+        _uiState.update { current ->
+            current.copy(isDemoMode = !apiKeyManager.isConfigured())
+        }
+    }
+
     private fun setLoading(isLoading: Boolean) {
         _uiState.update { current -> current.copy(isLoading = isLoading) }
     }
@@ -94,5 +127,9 @@ class ChatViewModel @Inject constructor(
 
     private fun clearError() {
         _uiState.update { current -> current.copy(errorMessage = null) }
+    }
+
+    private fun setShowApiKeyDialog(show: Boolean) {
+        _uiState.update { current -> current.copy(showApiKeyDialog = show) }
     }
 }

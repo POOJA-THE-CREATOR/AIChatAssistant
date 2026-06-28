@@ -16,15 +16,23 @@ data class GeminiPart(
 )
 
 data class GeminiResponse(
-    val candidates: List<GeminiCandidate>?
+    val candidates: List<GeminiCandidate>?,
+    val promptFeedback: GeminiPromptFeedback? = null
 )
 
 data class GeminiCandidate(
-    val content: GeminiCandidateContent?
+    val content: GeminiCandidateContent?,
+    @SerializedName("finishReason")
+    val finishReason: String? = null
 )
 
 data class GeminiCandidateContent(
     val parts: List<GeminiPart>?
+)
+
+data class GeminiPromptFeedback(
+    @SerializedName("blockReason")
+    val blockReason: String? = null
 )
 
 data class GeminiErrorResponse(
@@ -34,5 +42,5 @@ data class GeminiErrorResponse(
 data class GeminiError(
     val message: String?,
     @SerializedName("status")
-    val status: String?
+    val status: String? = null
 )

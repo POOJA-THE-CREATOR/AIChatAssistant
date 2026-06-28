@@ -5,5 +5,7 @@ import com.example.aichatassisstant.domain.model.ChatMessage
 data class ChatUiState(
     val messages: List<ChatMessage> = emptyList(),
     val isLoading: Boolean = false,
-    val errorMessage: String? = null
+    val errorMessage: String? = null,
+    val showApiKeyDialog: Boolean = false,
+    val isDemoMode: Boolean = true
 )
