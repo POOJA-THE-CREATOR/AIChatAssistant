@@ -1,6 +1,6 @@
 # AI Chat Assistant
 
-<img width="700" height="1000" alt="Screenshot_20260629_005839" src="https://github.com/user-attachments/assets/55cd889f-2695-4fdc-8b99-aa5a1bad326a" />
+<img width="500" height="800" alt="Screenshot_20260629_005839" src="https://github.com/user-attachments/assets/55cd889f-2695-4fdc-8b99-aa5a1bad326a" />
 
 
 A production-style Android chatbot that integrates with **Google Gemini** and ships with a built-in **demo mode**, so reviewers and recruiters can run the app instantly without an API key.
